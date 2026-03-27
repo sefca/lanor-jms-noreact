@@ -4,7 +4,7 @@ date: 2026-03-28
 description: Check out the healthy and delicious breakfast and lunch options for
   the month of April.
 author: src/content/authors/munch-melissa.md
-category: nutrition
+category: src/content/categories/nutrition.md
 tags:
   - morning-munch
 image: https://picsum.photos/seed/nutrition/1200/800
