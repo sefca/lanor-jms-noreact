@@ -1,0 +1,85 @@
+---
+import logo from '../assets/lanor-lynx-logo.webp';
+import footerData from '../data/footer.json';
+---
+
+<footer class="bg-lanor-green-dark text-blue-100 py-16 lg:py-24">
+  <div class="container mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+      <div class="space-y-6">
+        <div class="flex items-center space-x-3 text-white">
+          <div class="relative w-10 h-10 flex items-center justify-center">
+            <img 
+              src={logo.src} 
+              alt="Lanor Logo" 
+              class="w-full h-auto"
+              referrerpolicy="no-referrer"
+            />
+          </div>
+          <div class="flex flex-col">
+            <span class="font-bold text-xl tracking-tight">Lanor JMS</span>
+            <span class="text-[10px] font-bold text-lanor-gold uppercase tracking-widest">Junior Middle School</span>
+          </div>
+        </div>
+        <p class="text-blue-200/70 leading-relaxed max-w-xs text-sm">
+          Dedicated to fostering a supportive and innovative learning environment for every student.
+        </p>
+        <div class="flex space-x-4">
+          {footerData.social.map((item) => {
+            return (
+              <a 
+                href={item.href} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="p-2 bg-green-900/50 rounded-lg hover:bg-lanor-green hover:text-white transition-all border border-green-800/50"
+              >
+                {item.icon && <i data-lucide={item.icon.toLowerCase()} class="w-5 h-5"></i>}
+              </a>
+            );
+          })}
+        </div>
+      </div>
+
+      <div>
+        <h4 class="text-lanor-gold font-bold mb-6 uppercase tracking-widest text-xs">{footerData.contact.title}</h4>
+        <ul class="space-y-4 text-sm">
+          {footerData.contact.links.map((link) => {
+            return (
+              <li class="flex items-start space-x-3">
+                {link.icon && <i data-lucide={link.icon.toLowerCase().replace(/([a-z])([A-Z])/g, '$1-$2')} class="w-5 h-5 text-lanor-gold shrink-0"></i>}
+                <a href={link.href} target="_blank" rel="noopener noreferrer" class="hover:text-lanor-gold transition-colors">
+                  {link.text}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+
+      {[footerData.quickLinks, footerData.resources].map((section) => (
+        <div>
+          <h4 class="text-lanor-gold font-bold mb-6 uppercase tracking-widest text-xs">{section.title}</h4>
+          <ul class="space-y-4 text-sm">
+            {section.links.map((link) => (
+              <li>
+                <a 
+                  href={link.href} 
+                  target={link.external ? "_blank" : undefined} 
+                  rel={link.external ? "noopener noreferrer" : undefined} 
+                  class="hover:text-lanor-gold transition-colors flex items-center gap-2 group"
+                >
+                  <div class="w-1.5 h-1.5 bg-blue-800 rounded-full group-hover:bg-lanor-gold transition-colors"></div>
+                  <span>{link.name}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <div class="pt-8 border-t border-blue-900/50 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-xs text-blue-300/50">
+      <p>© 2026 Lanor Junior Middle School. All rights reserved.</p>
+    </div>
+  </div>
+</footer>

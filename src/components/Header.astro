@@ -1,0 +1,294 @@
+---
+import logo from '../assets/lanor-lynx-logo.webp';
+import navLinksData from '../data/navLinks.json';
+
+const navLinks = navLinksData;
+---
+
+<header 
+  id="main-header"
+  class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-white/90 backdrop-blur-sm py-5"
+>
+  <div class="container mx-auto px-6 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-3 group cursor-pointer">
+      <div class="relative w-12 h-12 flex items-center justify-center">
+        <img 
+          src={logo.src} 
+          alt="Lanor Lynx Logo" 
+          class="w-full h-auto drop-shadow-sm group-hover:scale-105 transition-transform"
+          referrerpolicy="no-referrer"
+        />
+      </div>
+      <div class="flex flex-col">
+        <span class="text-xl font-bold text-lanor-green tracking-tight leading-none">Lanor JMS</span>
+        <span class="text-[10px] font-bold text-lanor-gold uppercase tracking-widest mt-0.5">Junior Middle School</span>
+      </div>
+    </a>
+
+    {/* Desktop Nav */}
+    <nav class="hidden lg:flex items-center gap-8">
+      {navLinks.map((link) => (
+        <div class="relative group nav-item">
+          <a 
+            href={link.href}
+            class="flex items-center gap-1 text-sm font-semibold text-zinc-600 hover:text-lanor-green transition-colors uppercase tracking-wider py-2"
+          >
+            {link.name}
+            {link.submenu && <i data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180"></i>}
+          </a>
+
+          {link.submenu && (
+            <div class={`absolute top-full left-0 pt-2 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200 z-50 ${link.submenu.length > 6 ? 'w-[520px]' : 'w-64'}`}>
+              <div class="bg-white border border-zinc-100 shadow-xl rounded-2xl py-4">
+                <div class={`grid gap-1 px-2 ${link.submenu.some(s => s.submenu) ? 'grid-cols-1 w-64' : (link.submenu.length > 6 ? 'grid-cols-2 w-[480px]' : 'grid-cols-1 w-64')}`}>
+                  {link.submenu.map((sub) => {
+                    return (
+                      <div class="relative nested-group">
+                        {sub.submenu ? (
+                          <div class="flex items-center justify-between px-4 py-3 rounded-xl hover:bg-green-50 text-zinc-600 hover:text-lanor-green transition-all group/item cursor-pointer">
+                            <div class="flex items-center gap-3">
+                              <div class="p-2 bg-zinc-50 rounded-lg group-hover/item:bg-white group-hover/item:shadow-sm transition-all">
+                                {sub.icon && <i data-lucide={sub.icon.toLowerCase().replace(/([a-z])([A-Z])/g, '$1-$2')} class="w-4 h-4 text-zinc-400 group-hover/item:text-lanor-green"></i>}
+                              </div>
+                              <span class="text-sm font-medium">{sub.name}</span>
+                            </div>
+                            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+  
+                            <div class="absolute top-0 left-full pl-2 w-64 opacity-0 translate-x-2 pointer-events-none group-hover/item:opacity-100 group-hover/item:translate-x-0 group-hover/item:pointer-events-auto transition-all duration-200 z-50">
+                              <div class="bg-white border border-zinc-100 shadow-xl rounded-2xl py-4">
+                                <div class="grid grid-cols-1 gap-1 px-2">
+                                  {sub.submenu.map((nested) => {
+                                    return (
+                                      <a
+                                        href={nested.href}
+                                        class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-green-50 text-zinc-600 hover:text-lanor-green transition-all group/nested"
+                                      >
+                                        <div class="p-2 bg-zinc-50 rounded-lg group-hover/nested:bg-white group-hover/nested:shadow-sm transition-all">
+                                          {nested.icon && <i data-lucide={nested.icon.toLowerCase().replace(/([a-z])([A-Z])/g, '$1-$2')} class="w-4 h-4 text-zinc-400 group-hover/nested:text-lanor-green"></i>}
+                                        </div>
+                                        <span class="text-sm font-medium">{nested.name}</span>
+                                      </a>
+                                    );
+                                  })}
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        ) : (
+                        <a
+                          href={sub.href}
+                          class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-green-50 text-zinc-600 hover:text-lanor-green transition-all group/item"
+                        >
+                          <div class="p-2 bg-zinc-50 rounded-lg group-hover/item:bg-white group-hover/item:shadow-sm transition-all">
+                            {sub.icon && <i data-lucide={sub.icon.toLowerCase().replace(/([a-z])([A-Z])/g, '$1-$2')} class="w-4 h-4 text-zinc-400 group-hover/item:text-lanor-green"></i>}
+                          </div>
+                          <span class="text-sm font-medium">{sub.name}</span>
+                        </a>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    ))}
+  </nav>
+
+    {/* Mobile Toggle */}
+    <button 
+      id="mobile-menu-toggle"
+      class="lg:hidden text-lanor-green p-2 flex items-center justify-center"
+      aria-label="Toggle Menu"
+    >
+      <div id="menu-icon">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </div>
+      <div id="close-icon" class="hidden">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </div>
+    </button>
+  </div>
+
+  {/* Mobile Menu */}
+  <div 
+    id="mobile-menu"
+    class="lg:hidden bg-white border-b border-zinc-100 overflow-hidden max-h-0 transition-all duration-300 ease-in-out"
+  >
+    <div class="container mx-auto px-6 py-8 flex flex-col gap-4">
+      {navLinks.map((link) => (
+        <div class="flex flex-col gap-2 mobile-nav-item">
+          {link.submenu ? (
+            <>
+              <div 
+                class="flex items-center justify-between py-2 cursor-pointer mobile-dropdown-toggle"
+                data-target={link.name}
+              >
+                <span class="text-2xl font-bold text-lanor-green">{link.name}</span>
+                <i data-lucide="chevron-down" class="w-6 h-6 text-lanor-gold transition-transform duration-300 dropdown-icon"></i>
+              </div>
+              <div class="mobile-submenu overflow-hidden max-h-0 transition-all duration-300 ease-in-out flex flex-col gap-3 pl-4 border-l-2 border-lanor-green-dark mt-2">
+                {link.href !== '#' && (
+                  <a 
+                    href={link.href}
+                    class="text-lg font-bold text-lanor-green flex items-center gap-3 mb-2"
+                  >
+                    <i data-lucide="chevron-right" class="w-5 h-5 text-lanor-gold"></i>
+                    Overview
+                  </a>
+                )}
+                {link.submenu.map((sub) => {
+                  return (
+                    <div class="flex flex-col gap-2">
+                      {sub.submenu ? (
+                        <>
+                          <div 
+                            class="text-lg font-medium text-zinc-600 hover:text-lanor-green flex items-center justify-between cursor-pointer mobile-nested-dropdown-toggle"
+                            data-target={sub.name}
+                          >
+                            <div class="flex items-center gap-3">
+                              {sub.icon && <i data-lucide={sub.icon.toLowerCase().replace(/([a-z])([A-Z])/g, '$1-$2')} class="w-5 h-5 text-lanor-gold"></i>}
+                              {sub.name}
+                            </div>
+                            <i data-lucide="chevron-down" class="w-5 h-5 transition-transform nested-dropdown-icon"></i>
+                          </div>
+                          <div class="mobile-nested-submenu overflow-hidden max-h-0 transition-all duration-300 ease-in-out flex flex-col gap-3 pl-8 border-l border-zinc-200 mt-1">
+                            {sub.submenu.map((nested) => {
+                              return (
+                                <a 
+                                  href={nested.href}
+                                  class="text-base font-medium text-zinc-500 hover:text-lanor-green flex items-center gap-3"
+                                >
+                                  {nested.icon && <i data-lucide={nested.icon.toLowerCase().replace(/([a-z])([A-Z])/g, '$1-$2')} class="w-4 h-4 text-lanor-gold/70"></i>}
+                                  {nested.name}
+                                </a>
+                              );
+                            })}
+                          </div>
+                        </>
+                      ) : (
+                        <a 
+                          href={sub.href}
+                          class="text-lg font-medium text-zinc-600 hover:text-lanor-green flex items-center gap-3"
+                        >
+                          {sub.icon && <i data-lucide={sub.icon.toLowerCase().replace(/([a-z])([A-Z])/g, '$1-$2')} class="w-5 h-5 text-lanor-gold"></i>}
+                          {sub.name}
+                        </a>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </>
+          ) : (
+            <a 
+              href={link.href}
+              class="flex items-center justify-between py-2 cursor-pointer"
+            >
+              <span class="text-2xl font-bold text-lanor-green">{link.name}</span>
+            </a>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+</header>
+
+<script>
+  const header = document.getElementById('main-header');
+  const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+  const closeIcon = document.getElementById('close-icon');
+
+  // Scroll effect
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) {
+      header?.classList.remove('bg-white/90', 'backdrop-blur-sm', 'py-5');
+      header?.classList.add('bg-white', 'shadow-md', 'py-3');
+    } else {
+      header?.classList.add('bg-white/90', 'backdrop-blur-sm', 'py-5');
+      header?.classList.remove('bg-white', 'shadow-md', 'py-3');
+    }
+  });
+
+  // Mobile menu toggle
+  mobileMenuToggle?.addEventListener('click', () => {
+    const isOpen = mobileMenu?.style.maxHeight !== '0px' && mobileMenu?.style.maxHeight !== '';
+    
+    if (isOpen) {
+      mobileMenu.style.maxHeight = '0px';
+      menuIcon?.classList.remove('hidden');
+      closeIcon?.classList.add('hidden');
+    } else {
+      mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+      menuIcon?.classList.add('hidden');
+      closeIcon?.classList.remove('hidden');
+    }
+  });
+
+  // Function to update parent heights
+  const updateParentHeights = (element) => {
+    let parent = element.parentElement;
+    while (parent) {
+      if (parent.classList.contains('mobile-submenu') || parent.id === 'mobile-menu') {
+        if (parent.style.maxHeight !== '0px' && parent.style.maxHeight !== '') {
+          parent.style.maxHeight = parent.scrollHeight + 'px';
+        }
+      }
+      parent = parent.parentElement;
+    }
+  };
+
+  // Mobile dropdowns
+  document.querySelectorAll('.mobile-dropdown-toggle').forEach(toggle => {
+    toggle.addEventListener('click', () => {
+      const submenu = toggle.nextElementSibling as HTMLElement;
+      const icon = toggle.querySelector('.dropdown-icon');
+      
+      if (submenu.style.maxHeight && submenu.style.maxHeight !== '0px') {
+        submenu.style.maxHeight = '0px';
+        icon?.classList.remove('rotate-180');
+      } else {
+        submenu.style.maxHeight = submenu.scrollHeight + 'px';
+        icon?.classList.add('rotate-180');
+      }
+      
+      // Update mobile menu height after a short delay to allow submenu transition
+      setTimeout(() => {
+        if (mobileMenu) {
+          mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+        }
+      }, 300);
+    });
+  });
+
+  // Mobile nested dropdowns
+  document.querySelectorAll('.mobile-nested-dropdown-toggle').forEach(toggle => {
+    toggle.addEventListener('click', () => {
+      const submenu = toggle.nextElementSibling as HTMLElement;
+      const icon = toggle.querySelector('.nested-dropdown-icon');
+      
+      if (submenu.style.maxHeight && submenu.style.maxHeight !== '0px') {
+        submenu.style.maxHeight = '0px';
+        icon?.classList.remove('rotate-180');
+      } else {
+        submenu.style.maxHeight = submenu.scrollHeight + 'px';
+        icon?.classList.add('rotate-180');
+      }
+
+      // Update parent heights
+      setTimeout(() => {
+        updateParentHeights(submenu);
+      }, 300);
+    });
+  });
+</script>
+
+<style>
+  /* Custom styles for dropdowns if needed */
+  .mobile-submenu, .mobile-nested-submenu {
+    transition: max-height 0.3s ease-in-out;
+  }
+</style>

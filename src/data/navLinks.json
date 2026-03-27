@@ -1,0 +1,37 @@
+[
+  { 
+    "name": "School", 
+    "href": "/school",
+    "submenu": [
+      { "name": "About Lanor", "href": "/about", "icon": "Info" },
+      { "name": "Staff Directory", "href": "/staff", "icon": "Users" },
+      { "name": "Calendar", "href": "/calendar", "icon": "Calendar" },
+      { "name": "New Student Info", "href": "/new-student-info", "icon": "GraduationCap" },
+      { "name": "Contact Us", "href": "/contact", "icon": "Phone" },
+      { 
+        "name": "Programs", 
+        "href": "#", 
+        "icon": "Trophy",
+        "submenu": [
+          { "name": "Nutrition Programs", "href": "/programs/nutrition", "icon": "Apple" },
+          { "name": "Athletics", "href": "/programs/athletics", "icon": "Trophy" },
+          { "name": "Clubs & Activities", "href": "/programs/clubs", "icon": "Guitar" },
+          { "name": "Special Education", "href": "/programs/spec-ed", "icon": "Heart" },
+          { "name": "After School Care", "href": "/programs/after-school-care", "icon": "BellElectric" }
+        ]
+      }
+    ]
+  },
+  { 
+    "name": "Parents", 
+    "href": "#",
+    "submenu": [
+      { "name": "School Council (SAC)", "href": "/sac", "icon": "Users" },
+      { "name": "SAC Meetings", "href": "/sac/meetings", "icon": "Speech" },
+      { "name": "Volunteering", "href": "/volunteer", "icon": "Heart" },
+      { "name": "Fundraising", "href": "/sac/fundraising", "icon": "DollarSign" }
+    ]
+  },
+  { "name": "Events", "href": "/events" },
+  { "name": "Updates", "href": "/updates" }
+]

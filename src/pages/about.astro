@@ -1,0 +1,40 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+---
+
+<PageLayout title="About Lanor JMS">
+	<div class="prose prose-lg prose-zinc max-w-none text-zinc-600 leading-relaxed space-y-8">
+		<p class="text-xl text-zinc-700 font-medium leading-relaxed">
+			Lanor Junior Middle School is a vibrant and inclusive community school located in the heart of Etobicoke. We serve students from Kindergarten to Grade 8, providing a nurturing environment that fosters academic excellence, creativity, and social responsibility.
+		</p>
+		
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-16">
+			<div>
+				<h2 class="text-3xl font-bold text-lanor-green mb-6">Our Mission</h2>
+				<p>
+					Our mission is to empower all students to reach their full potential as lifelong learners and responsible global citizens. We achieve this through a rigorous academic curriculum, a wide range of extracurricular activities, and a strong partnership between school, home, and community.
+				</p>
+			</div>
+			<div>
+				<h2 class="text-3xl font-bold text-lanor-green mb-6">School History</h2>
+				<p>
+					Lanor has a long-standing tradition of community involvement and student success. Over the years, we have evolved to meet the changing needs of our students, incorporating modern technology and innovative teaching practices while maintaining our core values of respect, integrity, and perseverance.
+				</p>
+			</div>
+		</div>
+
+		<div class="mt-16 p-8 bg-zinc-50 rounded-[2rem] border border-zinc-100">
+			<h3 class="text-2xl font-bold text-lanor-green-dark mb-6">Our Core Values</h3>
+			<div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+				{['Respect', 'Integrity', 'Perseverance', 'Excellence'].map((value) => (
+					<div class="flex flex-col items-center text-center gap-3">
+						<div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-lanor-green shadow-sm border border-zinc-100">
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>
+						</div>
+						<span class="font-bold text-zinc-700 uppercase tracking-widest text-[10px]">{value}</span>
+					</div>
+				))}
+			</div>
+		</div>
+	</div>
+</PageLayout>

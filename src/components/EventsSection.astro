@@ -1,0 +1,72 @@
+---
+const upcomingEvents = [
+  { name: 'March Break', date: 'Mar 16 - 20, 2026', type: 'School Holiday', color: 'bg-amber-50 text-amber-700 border-amber-100' },
+  { name: 'Grocery Gift Card Drive', date: 'Mar 23 - 27, 2026', type: 'Fundraiser', color: 'bg-blue-50 text-blue-700 border-blue-100' },
+  { name: 'Walk & Wheel Wednesday', date: 'Every Wednesday', type: 'Activity', color: 'bg-emerald-50 text-emerald-700 border-emerald-100' },
+  { name: 'Marlies Game', date: 'Apr 10, 2026', type: 'Field Trip', color: 'bg-purple-50 text-purple-700 border-purple-100' },
+  { name: 'Grad Photos', date: 'Apr 15, 2026', type: 'School Event', color: 'bg-rose-50 text-rose-700 border-rose-100' },
+];
+---
+
+<section id="events" class="py-24 bg-zinc-50">
+  <div class="container mx-auto px-6">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+      <div class="max-w-2xl">
+        <div class="inline-flex items-center gap-2 text-lanor-blue font-bold text-xs uppercase tracking-widest mb-4">
+          <i data-lucide="bell" class="w-4 h-4"></i>
+          Stay Informed
+        </div>
+        <h2 class="text-4xl font-extrabold text-lanor-green-dark mb-4 tracking-tight">Upcoming Events</h2>
+        <p class="text-lg text-zinc-600 leading-relaxed">
+          Don't miss out on important dates, school holidays, and community activities at Lanor JMS.
+        </p>
+      </div>
+      <a href="/events" class="mt-8 md:mt-0 px-6 py-3 bg-white border-2 border-green-100 text-lanor-green font-bold rounded-xl hover:bg-green-50 transition-all flex items-center gap-2 group">
+        View All Events
+        <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {upcomingEvents.map((event, index) => (
+        <div
+          class="group bg-white p-8 rounded-3xl border border-zinc-100 hover:border-lanor-green/20 hover:shadow-xl hover:shadow-lanor-green/5 transition-all animate-fade-in"
+          style={`animation-delay: ${index * 0.1}s`}
+        >
+          <div class="flex justify-between items-start mb-6">
+            <div class={`p-3 rounded-2xl ${event.color} border`}>
+              <i data-lucide="calendar" class="w-6 h-6"></i>
+            </div>
+            <span class={`px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest ${event.color} border`}>
+              {event.type}
+            </span>
+          </div>
+          <h3 class="text-xl font-bold text-lanor-green-dark mb-3 group-hover:text-lanor-green transition-colors">
+            {event.name}
+          </h3>
+          <div class="flex items-center gap-2 text-zinc-500 text-sm font-medium">
+            <i data-lucide="clock" class="w-4 h-4 text-lanor-gold"></i>
+            {event.date}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .animate-fade-in {
+    opacity: 0;
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+</style>

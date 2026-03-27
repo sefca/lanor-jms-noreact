@@ -1,0 +1,46 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+---
+
+<PageLayout title="Nutrition Programs">
+	<div class="prose prose-lg prose-zinc max-w-none text-zinc-600 leading-relaxed space-y-8">
+		<p class="text-xl text-zinc-700 font-medium leading-relaxed">
+			At Lanor JMS, we believe that healthy eating is fundamental to student success. We offer a range of nutrition initiatives and lunch programs to ensure that every student has access to nutritious and delicious meals.
+		</p>
+		
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
+			<div class="p-8 bg-green-50 rounded-[2rem] border border-green-100">
+				<div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-lanor-green shadow-sm mb-6 border border-green-50">
+					<i data-lucide="sun" class="w-6 h-6"></i>
+				</div>
+				<h2 class="text-2xl font-bold text-lanor-green-dark mb-4">Morning Munch</h2>
+				<p class="text-zinc-600">
+					Our morning nutrition program provides healthy snacks to students, ensuring they have the energy they need to focus and learn throughout the morning.
+				</p>
+			</div>
+
+			<div class="p-8 bg-amber-50 rounded-[2rem] border border-amber-100">
+				<div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-amber-600 shadow-sm mb-6 border border-amber-50">
+					<i data-lucide="shopping-bag" class="w-6 h-6"></i>
+				</div>
+				<h2 class="text-2xl font-bold text-amber-900 mb-4">Lunch Programs</h2>
+				<p class="text-zinc-600">
+					We partner with various local vendors to provide a variety of lunch options for our students, including Subway, Lunch Lady, and Pizza Lunch days.
+				</p>
+			</div>
+		</div>
+
+		<div class="mt-16 p-10 bg-lanor-green-dark text-white rounded-[2.5rem] relative overflow-hidden">
+			<div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -mr-32 -mt-32 blur-3xl"></div>
+			<div class="relative z-10">
+				<h2 class="text-3xl font-bold mb-6">How to Order</h2>
+				<p class="text-white/80 text-lg mb-8 max-w-2xl">
+					Orders for lunch programs can be placed through our online portal. Please check our school calendar for upcoming lunch days and order deadlines.
+				</p>
+				<button class="px-8 py-4 bg-lanor-gold hover:bg-lanor-gold-light text-lanor-green-dark rounded-full font-bold transition-all shadow-lg shadow-black/20">
+					Go to Order Portal
+				</button>
+			</div>
+		</div>
+	</div>
+</PageLayout>

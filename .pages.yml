@@ -1,0 +1,102 @@
+media: src/assets
+content:
+  - name: updates
+    label: Updates
+    type: collection
+    path: src/content/updates
+    view:
+      fields: [title, date, description, author, category, tags]
+    fields:
+      - name: title
+        type: string
+      - name: date
+        type: date
+      - name: description
+        type: string
+      - name: author
+        type: reference
+        options:
+          collection: authors
+          value: "{fields.file-name}"
+          label: "{fields.file-name}"
+      - name: category
+        type: reference
+        options:
+          collection: categories
+          value: "{fields.file-name}"
+          label: "{fields.file-name}"
+      - name: tags
+        type: reference
+        options:
+          collection: tags
+          value: "{fields.file-name}"
+          label: "{fields.file-name}"
+          multiple: true
+      - name: image
+        type: string
+      - name: body
+        type: rich-text
+  - name: authors
+    label: Authors
+    type: collection
+    path: src/content/authors
+    filename:
+      template: "{fields.file-name}.md"
+    fields:
+      - name: name
+        type: string
+      - name: role
+        type: string
+      - name: bio
+        type: string
+      - name: avatar
+        type: string
+      - name: link
+        type: string
+        pattern: ^((https?:\/\/)?(www\.)?[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(\/[^\s]*)?)?$
+      - name: file-name
+        type: string
+        required: true
+  - name: categories
+    label: Categories
+    type: collection
+    path: src/content/categories
+    filename:
+      template: "{fields.file-name}.md"
+    view:
+      fields: [name]
+    fields:
+      - name: name
+        type: string
+      - name: file-name
+        type: string
+        required: true
+  - name: tags
+    label: Tags
+    type: collection
+    path: src/content/tags
+    filename:
+      template: "{fields.file-name}.md"
+    view:
+      fields: [name]
+    fields:
+      - name: name
+        type: string
+      - name: file-name
+        type: string
+        required: true
+  - name: global
+    label: Global
+    type: group
+    items:
+      - name: top-nav
+        label: Top Navigation
+        type: file
+        path: src/content/global/top-nav.json
+      - name: footer
+        label: Footer Info
+        type: file
+        path: src/content/global/footer.json
+settings:
+  commit:
+    customizable: true

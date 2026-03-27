@@ -1,0 +1,126 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+
+const upcomingEvents = [
+  { name: 'March Break', date: 'Mar 16 - 20, 2026', type: 'School Holiday', color: 'bg-amber-50 text-amber-700 border-amber-100', description: 'No school for students during the spring break.' },
+  { name: 'Grocery Gift Card Drive', date: 'Mar 23 - 27, 2026', type: 'Fundraiser', color: 'bg-blue-50 text-blue-700 border-blue-100', description: 'Supporting our community through grocery gift card donations.' },
+  { name: 'Walk & Wheel Wednesday', date: 'Every Wednesday', type: 'Activity', color: 'bg-emerald-50 text-emerald-700 border-emerald-100', description: 'Encouraging students to walk, bike, or roll to school.' },
+  { name: 'Marlies Game', date: 'Apr 10, 2026', type: 'Field Trip', color: 'bg-purple-50 text-purple-700 border-purple-100', description: 'School-wide trip to see the Toronto Marlies.' },
+  { name: 'Grad Photos', date: 'Apr 15, 2026', type: 'School Event', color: 'bg-rose-50 text-rose-700 border-rose-100', description: 'Graduation photos for our Grade 8 students.' },
+  { name: 'School Council Meeting', date: 'Monthly', type: 'Meeting', color: 'bg-zinc-50 text-zinc-700 border-zinc-100', description: 'Join us for our monthly SAC meeting in the library or via Zoom.' },
+  { name: 'Lanor Movie Night', date: 'TBD', type: 'Community', color: 'bg-indigo-50 text-indigo-700 border-indigo-100', description: 'A fun evening for families to enjoy a movie together at school.' },
+];
+
+const pastEvents = [
+  'Lanor Winter Musical', 'Parent Teacher Interviews', 'Valentines Day School Dance', 'Family Skating Party', 
+  'Winter Break', 'Kinder Winter Concerts', 'Activity Day', 'Spirit Wear', 'Candy Grams', 'Food Drive', 
+  'Toy Drive', 'Mitten Tree', 'Battery Blitz', 'Jr. ESL Performances', 'Photo Re-Takes', 'Remembrance Day', 
+  'Halloween Parade & Dance', 'Spirit Day', 'Halloween Dance', 'Photo Day', 'Pita Lunch', 'Curriculum Night', 
+  'Terry Fox', 'Orange Shirt', 'Kindie Social', "2025 Lanor's Got Talent", 'End of School BBQ', 
+  'Gr 7/8 Music & Dance Evening', 'Staff Appreciation', 'Lanor JMS Lion King Jr', 'Lanor Movie Night', 
+  'Lanor Lip Sync Battle', '2024 Lanor JMS Winter Concert', '2024 Kinder Winter Concert', '2023 Winter Concert'
+];
+
+const nutritionEvents = [
+  { name: 'Morning Munch', href: '/nutrition', icon: '🍎' },
+  { name: 'Subway Lunch', href: '/nutrition', icon: '🥪' },
+  { name: 'Lunch Lady', href: '/nutrition', icon: '🍱' },
+  { name: 'Pizza Lunch', href: '/nutrition', icon: '🍕' },
+];
+---
+
+<PageLayout title="Lanor JMS Events">
+  <div class="prose prose-lg prose-zinc max-w-none text-zinc-600 leading-relaxed space-y-12">
+    <p class="text-xl text-zinc-700 font-medium leading-relaxed">
+      Lanor JMS has many whole school events throughout the year. Assemblies, performances, fundraisers, and many more things to participate in.
+    </p>
+
+    <div class="bg-lanor-green-dark p-8 rounded-[2.5rem] text-white flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl shadow-lanor-green/20">
+      <div class="flex items-center gap-6">
+        <div class="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center text-lanor-gold">
+          <i data-lucide="calendar" class="w-8 h-8"></i>
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold mb-1 text-white">School Calendar</h2>
+          <p class="text-white/70 text-sm">The best way to stay updated is to subscribe to our calendar.</p>
+        </div>
+      </div>
+      <a href="/calendar" class="px-8 py-4 bg-lanor-gold hover:bg-lanor-gold-light text-lanor-green-dark rounded-full font-bold transition-all shadow-lg flex items-center gap-2 group">
+        View Full Calendar
+        <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+      </a>
+    </div>
+
+    <section class="space-y-8">
+      <div class="flex items-center gap-3 text-lanor-green font-bold text-sm uppercase tracking-widest">
+        <i data-lucide="bell" class="w-[18px] h-[18px]"></i>
+        Upcoming 2025/26 Events
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {upcomingEvents.map((event) => (
+          <div class="bg-white p-8 rounded-3xl border border-zinc-100 hover:border-lanor-green/20 hover:shadow-xl transition-all group">
+            <div class="flex justify-between items-start mb-6">
+              <div class={`p-3 rounded-2xl ${event.color} border`}>
+                <i data-lucide="calendar" class="w-6 h-6"></i>
+              </div>
+              <span class={`px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest ${event.color} border`}>
+                {event.type}
+              </span>
+            </div>
+            <h3 class="text-xl font-bold text-lanor-green-dark mb-2 group-hover:text-lanor-green transition-colors">
+              {event.name}
+            </h3>
+            <div class="flex items-center gap-2 text-zinc-500 text-sm font-medium mb-4">
+              <i data-lucide="clock" class="w-4 h-4 text-lanor-gold"></i>
+              {event.date}
+            </div>
+            <p class="text-zinc-600 text-sm leading-relaxed">
+              {event.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="space-y-8">
+      <div class="flex items-center gap-3 text-lanor-green font-bold text-sm uppercase tracking-widest">
+        <i data-lucide="external-link" class="w-[18px] h-[18px]"></i>
+        Nutrition & Lunch Programs
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {nutritionEvents.map((item) => (
+          <a href={item.href} class="p-6 bg-zinc-50 rounded-2xl border border-zinc-100 hover:bg-white hover:border-lanor-green/20 hover:shadow-md transition-all text-center group">
+            <div class="text-3xl mb-3 group-hover:scale-110 transition-transform">{item.icon}</div>
+            <div class="font-bold text-zinc-700 text-sm">{item.name}</div>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section class="space-y-8">
+      <div class="flex items-center gap-3 text-zinc-400 font-bold text-sm uppercase tracking-widest">
+        <i data-lucide="history" class="w-[18px] h-[18px]"></i>
+        Past Lanor JMS Events
+      </div>
+      <div class="flex flex-wrap gap-3">
+        {pastEvents.map((event) => (
+          <span class="px-4 py-2 bg-zinc-50 text-zinc-500 rounded-full text-xs font-medium border border-zinc-100 hover:bg-zinc-100 transition-colors">
+            {event}
+          </span>
+        ))}
+      </div>
+    </section>
+
+    <div class="mt-16 p-10 bg-zinc-50 rounded-[2.5rem] border border-zinc-100 text-center">
+      <h2 class="text-3xl font-bold text-lanor-green-dark mb-4">Want to help out?</h2>
+      <p class="text-zinc-600 mb-8 max-w-xl mx-auto">
+        Many of our events rely on the support of our wonderful volunteers. Join our community of parents and guardians making a difference.
+      </p>
+      <a href="/volunteer" class="inline-flex items-center gap-2 px-8 py-4 bg-lanor-green text-white rounded-full font-bold hover:bg-lanor-green-dark transition-all shadow-lg group">
+        Become a Volunteer
+        <i data-lucide="heart" class="w-5 h-5 group-hover:scale-110 transition-transform"></i>
+      </a>
+    </div>
+  </div>
+</PageLayout>
