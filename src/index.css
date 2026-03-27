@@ -2,7 +2,8 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  /* --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif; */
+  --font-sans: ui-sans-serif, system-ui, sans-serif;
   
   --color-lanor-green: #1d6d3b;
   --color-lanor-gold: #ffcc00;
