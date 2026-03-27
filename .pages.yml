@@ -17,14 +17,14 @@ content:
         type: reference
         options:
           collection: authors
-          value: "{fields.file-name}"
-          label: "{fields.file-name}"
+          # value: "{fields.file-name}"
+          label: "{fields.name} - {fields.role}"
       - name: category
         type: reference
         options:
           collection: categories
-          value: "{fields.file-name}"
-          label: "{fields.file-name}"
+          # value: "{fields.file-name}"
+          # label: "{fields.name}"
       - name: tags
         type: reference
         options:
