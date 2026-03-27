@@ -1,11 +1,11 @@
 ---
 import logo from '../assets/lanor-lynx-logo.webp';
-import footerData from '../data/footer.json';
+import footerData from '../content/global/footer.json';
 ---
 
-<footer class="bg-lanor-green-dark text-blue-100 py-16 lg:py-24">
+<footer class="bg-lanor-green-dark text-blue-100 py-16 lg:py-16">
   <div class="container mx-auto px-6">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
       <div class="space-y-6">
         <div class="flex items-center space-x-3 text-white">
           <div class="relative w-10 h-10 flex items-center justify-center">
@@ -40,23 +40,7 @@ import footerData from '../data/footer.json';
         </div>
       </div>
 
-      <div>
-        <h4 class="text-lanor-gold font-bold mb-6 uppercase tracking-widest text-xs">{footerData.contact.title}</h4>
-        <ul class="space-y-4 text-sm">
-          {footerData.contact.links.map((link) => {
-            return (
-              <li class="flex items-start space-x-3">
-                {link.icon && <i data-lucide={link.icon.toLowerCase().replace(/([a-z])([A-Z])/g, '$1-$2')} class="w-5 h-5 text-lanor-gold shrink-0"></i>}
-                <a href={link.href} target="_blank" rel="noopener noreferrer" class="hover:text-lanor-gold transition-colors">
-                  {link.text}
-                </a>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
-
-      {[footerData.quickLinks, footerData.resources].map((section) => (
+      {footerData.sections.map((section) => (
         <div>
           <h4 class="text-lanor-gold font-bold mb-6 uppercase tracking-widest text-xs">{section.title}</h4>
           <ul class="space-y-4 text-sm">
@@ -68,8 +52,9 @@ import footerData from '../data/footer.json';
                   rel={link.external ? "noopener noreferrer" : undefined} 
                   class="hover:text-lanor-gold transition-colors flex items-center gap-2 group"
                 >
-                  <div class="w-1.5 h-1.5 bg-blue-800 rounded-full group-hover:bg-lanor-gold transition-colors"></div>
-                  <span>{link.name}</span>
+                  {link.icon && <i data-lucide={link.icon.toLowerCase().replace(/([a-z])([A-Z])/g, '$1-$2')} class="w-5 h-5 text-lanor-gold shrink-0"></i>}
+                  {!link.icon && <div class="w-1.5 h-1.5 bg-blue-800 rounded-full group-hover:bg-lanor-gold transition-colors"></div>}
+                  <span>{link.label}</span>
                 </a>
               </li>
             ))}
@@ -79,7 +64,7 @@ import footerData from '../data/footer.json';
     </div>
 
     <div class="pt-8 border-t border-blue-900/50 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-xs text-blue-300/50">
-      <p>© 2026 Lanor Junior Middle School. All rights reserved.</p>
+      <p>{footerData.copyright}</p>
     </div>
   </div>
 </footer>

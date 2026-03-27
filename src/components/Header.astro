@@ -1,6 +1,6 @@
 ---
 import logo from '../assets/lanor-lynx-logo.webp';
-import navLinksData from '../data/navLinks.json';
+import navLinksData from '../content/global/top-nav.json';
 
 const navLinks = navLinksData;
 ---
@@ -33,7 +33,7 @@ const navLinks = navLinksData;
             href={link.href}
             class="flex items-center gap-1 text-sm font-semibold text-zinc-600 hover:text-lanor-green transition-colors uppercase tracking-wider py-2"
           >
-            {link.name}
+            {link.label}
             {link.submenu && <i data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180"></i>}
           </a>
 
@@ -50,7 +50,7 @@ const navLinks = navLinksData;
                               <div class="p-2 bg-zinc-50 rounded-lg group-hover/item:bg-white group-hover/item:shadow-sm transition-all">
                                 {sub.icon && <i data-lucide={sub.icon.toLowerCase().replace(/([a-z])([A-Z])/g, '$1-$2')} class="w-4 h-4 text-zinc-400 group-hover/item:text-lanor-green"></i>}
                               </div>
-                              <span class="text-sm font-medium">{sub.name}</span>
+                              <span class="text-sm font-medium">{sub.label}</span>
                             </div>
                             <i data-lucide="chevron-right" class="w-4 h-4"></i>
   
@@ -66,7 +66,7 @@ const navLinks = navLinksData;
                                         <div class="p-2 bg-zinc-50 rounded-lg group-hover/nested:bg-white group-hover/nested:shadow-sm transition-all">
                                           {nested.icon && <i data-lucide={nested.icon.toLowerCase().replace(/([a-z])([A-Z])/g, '$1-$2')} class="w-4 h-4 text-zinc-400 group-hover/nested:text-lanor-green"></i>}
                                         </div>
-                                        <span class="text-sm font-medium">{nested.name}</span>
+                                        <span class="text-sm font-medium">{nested.label}</span>
                                       </a>
                                     );
                                   })}
@@ -82,7 +82,7 @@ const navLinks = navLinksData;
                           <div class="p-2 bg-zinc-50 rounded-lg group-hover/item:bg-white group-hover/item:shadow-sm transition-all">
                             {sub.icon && <i data-lucide={sub.icon.toLowerCase().replace(/([a-z])([A-Z])/g, '$1-$2')} class="w-4 h-4 text-zinc-400 group-hover/item:text-lanor-green"></i>}
                           </div>
-                          <span class="text-sm font-medium">{sub.name}</span>
+                          <span class="text-sm font-medium">{sub.label}</span>
                         </a>
                       )}
                     </div>
@@ -123,9 +123,9 @@ const navLinks = navLinksData;
             <>
               <div 
                 class="flex items-center justify-between py-2 cursor-pointer mobile-dropdown-toggle"
-                data-target={link.name}
+                data-target={link.label}
               >
-                <span class="text-2xl font-bold text-lanor-green">{link.name}</span>
+                <span class="text-2xl font-bold text-lanor-green">{link.label}</span>
                 <i data-lucide="chevron-down" class="w-6 h-6 text-lanor-gold transition-transform duration-300 dropdown-icon"></i>
               </div>
               <div class="mobile-submenu overflow-hidden max-h-0 transition-all duration-300 ease-in-out flex flex-col gap-3 pl-4 border-l-2 border-lanor-green-dark mt-2">
@@ -145,11 +145,11 @@ const navLinks = navLinksData;
                         <>
                           <div 
                             class="text-lg font-medium text-zinc-600 hover:text-lanor-green flex items-center justify-between cursor-pointer mobile-nested-dropdown-toggle"
-                            data-target={sub.name}
+                            data-target={sub.label}
                           >
                             <div class="flex items-center gap-3">
                               {sub.icon && <i data-lucide={sub.icon.toLowerCase().replace(/([a-z])([A-Z])/g, '$1-$2')} class="w-5 h-5 text-lanor-gold"></i>}
-                              {sub.name}
+                              {sub.label}
                             </div>
                             <i data-lucide="chevron-down" class="w-5 h-5 transition-transform nested-dropdown-icon"></i>
                           </div>
@@ -161,7 +161,7 @@ const navLinks = navLinksData;
                                   class="text-base font-medium text-zinc-500 hover:text-lanor-green flex items-center gap-3"
                                 >
                                   {nested.icon && <i data-lucide={nested.icon.toLowerCase().replace(/([a-z])([A-Z])/g, '$1-$2')} class="w-4 h-4 text-lanor-gold/70"></i>}
-                                  {nested.name}
+                                  {nested.label}
                                 </a>
                               );
                             })}
@@ -173,7 +173,7 @@ const navLinks = navLinksData;
                           class="text-lg font-medium text-zinc-600 hover:text-lanor-green flex items-center gap-3"
                         >
                           {sub.icon && <i data-lucide={sub.icon.toLowerCase().replace(/([a-z])([A-Z])/g, '$1-$2')} class="w-5 h-5 text-lanor-gold"></i>}
-                          {sub.name}
+                          {sub.label}
                         </a>
                       )}
                     </div>
@@ -186,7 +186,7 @@ const navLinks = navLinksData;
               href={link.href}
               class="flex items-center justify-between py-2 cursor-pointer"
             >
-              <span class="text-2xl font-bold text-lanor-green">{link.name}</span>
+              <span class="text-2xl font-bold text-lanor-green">{link.label}</span>
             </a>
           )}
         </div>

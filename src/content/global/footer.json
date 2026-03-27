@@ -1,44 +1,34 @@
 {
     "social": [
-        { "name": "Facebook", "href": "https://www.facebook.com/LanorSAC", "icon": "Facebook" },
-        { "name": "Instagram", "href": "https://www.instagram.com/LanorSAC", "icon": "Instagram" }
+        { "label": "Facebook", "href": "https://www.facebook.com/LanorSAC", "icon": "Facebook" },
+        { "label": "Instagram", "href": "https://www.instagram.com/LanorSAC", "icon": "Instagram" }
     ],
-    "contact": {
-        "title": "Contact Us",
-        "links": [
-            {
-                "icon": "MapPin",
-                "text": "450 Lanor Ave, Etobicoke, ON M8C 2J4",
-                "href": "https://maps.google.com/?q=450+Lanor+Ave,+Etobicoke,+ON+M8C+2J4"
-            },
-            {
-                "icon": "Phone",
-                "text": "(416) 394-7630",
-                "href": "tel:4163947630"
-            },
-            {
-                "icon": "Mail",
-                "text": "lanor@tdsb.on.ca",
-                "href": "mailto:lanor@tdsb.on.ca"
-            }
-        ]
-    },
-    "quickLinks": {
-        "title": "Quick Links",
-        "links": [
-            { "name": "School Calendar", "href": "/calendar", "external": false },
-            { "name": "Upcoming Events", "href": "/events", "external": false },
-            { "name": "School Council", "href": "/sac", "external": false },
-            { "name": "Volunteers Needed", "href": "/volunteer", "external": false }
-        ]
-    },
-    "resources": {
-        "title": "Resources",
-        "links": [
-            { "name": "TDSB Website", "href": "https://www.tdsb.on.ca", "external": true },
-            { "name": "Nutrition Programs", "href": "/nutrition", "external": false },
-            { "name": "Council Meetings", "href": "/sac/meetings", "external": false },
-            { "name": "Lanor Movie Night", "href": "/events", "external": false }
-        ]
-    }
+    "sections": [
+        {
+            "title": "Contact Us",
+            "links": [
+                { "label": "450 Lanor Ave, Etobicoke, ON M8C 2J4", "href": "https://maps.google.com/?q=450+Lanor+Ave,+Etobicoke,+ON+M8C+2J4", "icon": "Map-Pin", "external": true },
+                { "label": "(416) 394-7630", "href": "tel:4163947630", "icon": "Phone" },
+                { "label": "lanor@tdsb.on.ca", "href": "mailto:lanor@tdsb.on.ca", "icon": "Mail" }
+            ]
+        },
+        {
+            "title": "Quick Links",
+            "links": [
+                { "label": "School Calendar", "href": "/calendar", "icon": "Calendar" },
+                { "label": "Upcoming Events", "href": "/events", "icon": "Calendar" },
+                { "label": "School Council", "href": "/sac", "icon": "Users" },
+                { "label": "Volunteers Needed", "href": "/volunteer", "icon": "Heart" }
+            ]
+        },
+        {
+            "title": "Resources",
+            "links": [
+                { "label": "Nutrition Programs", "href": "/nutrition", "icon": "Apple" },
+                { "label": "Council Meetings", "href": "/sac/meetings", "icon": "Users" },
+                { "label": "Lanor Movie Night", "href": "/events", "icon": "Calendar" }
+            ]
+        }
+    ],
+    "copyright": "© 2026 Lanor Junior Middle School. All rights reserved."
 }

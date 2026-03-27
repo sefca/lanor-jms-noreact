@@ -1,36 +1,36 @@
 [
   { 
-    "name": "School", 
+    "label": "School", 
     "href": "/school",
     "submenu": [
-      { "name": "About Lanor", "href": "/about", "icon": "Info" },
-      { "name": "Staff Directory", "href": "/staff", "icon": "Users" },
-      { "name": "Calendar", "href": "/calendar", "icon": "Calendar" },
-      { "name": "New Student Info", "href": "/new-student-info", "icon": "GraduationCap" },
+      { "label": "About Lanor", "href": "/school/about", "icon": "Info" },
+      { "label": "Staff Directory", "href": "/school/staff", "icon": "Users" },
+      { "label": "Calendar", "href": "/school/calendar", "icon": "Calendar" },
+      { "label": "New Student Info", "href": "/school/new-student-info", "icon": "Graduation-Cap" },
       { 
-        "name": "Programs", 
+        "label": "Programs", 
         "href": "#", 
         "icon": "Trophy",
         "submenu": [
-          { "name": "Nutrition Programs", "href": "/programs/nutrition", "icon": "Apple" },
-          { "name": "Athletics", "href": "/programs/athletics", "icon": "Trophy" },
-          { "name": "Clubs & Activities", "href": "/programs/clubs", "icon": "Guitar" },
-          { "name": "Special Education", "href": "/programs/spec-ed", "icon": "Heart" },
-          { "name": "After School Care", "href": "/programs/after-school-care", "icon": "BellElectric" }
+          { "label": "Nutrition Programs", "href": "/school/programs/nutrition", "icon": "Apple" },
+          { "label": "Athletics", "href": "/school/programs/athletics", "icon": "Trophy" },
+          { "label": "Clubs & Activities", "href": "/school/programs/clubs", "icon": "Guitar" },
+          { "label": "Special Education", "href": "/school/programs/special-education", "icon": "Heart" },
+          { "label": "After School Care", "href": "/school/programs/after-school-care", "icon": "Bell-Electric" }
         ]
       }
     ]
   },
   { 
-    "name": "Parents", 
+    "label": "Parents", 
     "href": "#",
     "submenu": [
-      { "name": "School Council (SAC)", "href": "/sac", "icon": "Users" },
-      { "name": "SAC Meetings", "href": "/sac/meetings", "icon": "Speech" },
-      { "name": "Volunteering", "href": "/volunteer", "icon": "Heart" },
-      { "name": "Fundraising", "href": "/sac/fundraising", "icon": "DollarSign" }
+      { "label": "School Council (SAC)", "href": "/sac", "icon": "Users" },
+      { "label": "SAC Meetings", "href": "/sac/meetings", "icon": "Speech" },
+      { "label": "Volunteering", "href": "/volunteer", "icon": "Heart" },
+      { "label": "Fundraising", "href": "/sac/fundraising", "icon": "Dollar-Sign" }
     ]
   },
-  { "name": "Events", "href": "/events" },
-  { "name": "Updates", "href": "/updates" }
+  { "label": "Events", "href": "/events" },
+  { "label": "Updates", "href": "/updates" }
 ]
