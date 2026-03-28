@@ -18,6 +18,7 @@ content:
         options:
           collection: authors
           # value: "{fields.file-name}"
+          value: "{name}"
           label: "{fields.name} - {fields.role}"
       - name: category
         type: reference
