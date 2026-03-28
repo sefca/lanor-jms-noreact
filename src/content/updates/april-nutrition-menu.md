@@ -1,8 +1,7 @@
 ---
 title: "Nutrition Program: April Menu"
 date: 2026-03-28
-description: Check out the healthy and delicious breakfast and lunch options for
-  the month of April.
+description: Check out the healthy and delicious morning munch options upcoming in April.
 author: munch-melissa.md
 category: nutrition.md
 tags:
@@ -11,22 +10,16 @@ image: https://picsum.photos/seed/nutrition/1200/800
 ---
 # April Nutrition Program Menu
 
-Our nutrition program continues to provide healthy, balanced meals to all our students. Here's what's on the menu for April:
+Our nutrition program continues to provide healthy, balanced snacks to all our students. Here's what's on the menu for April:
 
-## Breakfast Highlights:
+## Some daily Morning Munch offerings:
 
-- **Mondays**: Whole grain muffins and fresh fruit
-- **Tuesdays**: Yogurt parfaits with granola
-- **Wednesdays**: Oatmeal with berries
-- **Thursdays**: Hard-boiled eggs and whole wheat toast
-- **Fridays**: Smoothies and cheese strings
-
-## Lunch Highlights:
-
-- **Week 1**: Vegetable stir-fry with brown rice
-- **Week 2**: Turkey and cheese wraps with side salad
-- **Week 3**: Pasta with marinara and steamed broccoli
-- **Week 4**: Lentil soup with whole grain crackers
+- Yogurt parfaits with fruit granola
+- Veggies, crackers, and cheese
+- Cereal and milk with fruit
+- Popcorn, cheese, and fruit
+- Brioche bites, grapes, and milk
+- Cheese strings, melba toast, and mixed veggies with dip & hummus
 
 ## Reminders:
 
