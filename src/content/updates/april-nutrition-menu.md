@@ -3,7 +3,7 @@ title: "Nutrition Program: April Menu"
 date: 2026-03-28
 description: Check out the healthy and delicious breakfast and lunch options for
   the month of April.
-author: src/content/authors/munch-melissa.md
+author: munch-melissa.md
 category: src/content/categories/nutrition.md
 tags:
   - morning-munch
