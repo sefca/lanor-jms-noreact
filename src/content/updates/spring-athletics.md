@@ -14,18 +14,18 @@ We are excited to announce the start of our spring athletics season at Lanor JMS
 
 ## Tryout & Practice Schedules:
 
-- **Badminton.** Gr 6-8. Various days at lunch and after school. Listen to morning announcements.
-- **Coed Volleyball:** Jr (Gr 5/6) & Sr (Gr 7/8) teams.
-- **Upcoming sports:**
+- **Badminton**. Gr 6-8. Various days at lunch and after school. Listen to morning announcements.
+- **Coed Volleyball**: Jr (Gr 5/6) & Sr (Gr 7/8) teams.
+- **Upcoming sports**:
   - **Ultimate Frisbee**: Starting mid April. Jr (Gr 4-6) & Sr (Gr 7/8) teams.
-  - **Slo-Pitch:**** 4 teams. Girls * Boys'. Jr (Gr 4-6) & Sr (Gr 7/8)
-  - **Track & Field:** Gr 4-8
+  - **Slo-Pitch**: 4 teams. Girls * Boys'. Jr (Gr 4-6) & Sr (Gr 7/8)
+  - **Track & Field**: Gr 4-8
 
 ## Requirements:
 
 1. **Permission Forms**: Must be signed and returned to the office before the first tryout.
 2. **Proper Gear**: Please bring appropriate footwear and athletic clothing.
 3. **Commitment**: Students are expected to attend all practices and games if they make the team.
-4. Listen to morning announcements for dates and times.
+4. **Listen** to morning announcements for dates and times.
 
 Go Lynx 🐾!
