@@ -2,7 +2,7 @@
 title: Spring Athletics Season Begins
 date: 2026-03-25
 description: Tryouts and practices for badminton and volleyball are ongoing.
-author: coach-miller.md
+author: coach-heim.md
 category: athletics.md
 tags:
   - athletics.md
