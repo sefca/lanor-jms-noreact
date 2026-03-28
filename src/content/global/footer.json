@@ -24,7 +24,7 @@
         {
             "title": "Resources",
             "links": [
-                { "label": "Nutrition Programs", "href": "/nutrition", "icon": "Apple" },
+                { "label": "Nutrition Programs", "href": "/school/programs/nutrition", "icon": "Apple" },
                 { "label": "Council Meetings", "href": "/sac/meetings", "icon": "Users" },
                 { "label": "Lanor Movie Night", "href": "/events", "icon": "Calendar" }
             ]
