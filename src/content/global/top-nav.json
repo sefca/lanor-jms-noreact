@@ -25,9 +25,9 @@
     "label": "Parents", 
     "href": "#",
     "submenu": [
-      { "label": "School Council (SAC)", "href": "/sac", "icon": "Users" },
+      { "label": "School Council (SAC)", "href": "/sac/about", "icon": "Users" },
       { "label": "SAC Meetings", "href": "/sac/meetings", "icon": "Speech" },
-      { "label": "Volunteering", "href": "/volunteer", "icon": "Heart" },
+      { "label": "Volunteering", "href": "/school/volunteer", "icon": "Heart" },
       { "label": "Fundraising", "href": "/sac/fundraising", "icon": "Dollar-Sign" }
     ]
   },
