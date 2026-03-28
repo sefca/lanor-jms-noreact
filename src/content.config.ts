@@ -20,11 +20,27 @@ const updatesCollection = defineCollection({
     description: z.string(),
     author: reference('authors'),
     image: z.string().optional(),
-    category: z.string().optional(),
+    category: reference('categories'),
+  }),
+});
+
+const tagsCollection = defineCollection({
+  loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: "./src/content/tags" }),
+  schema: z.object({
+    name: z.string(),
+  }),
+});
+
+const categoriesCollection = defineCollection({
+  loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: "./src/content/categories" }),
+  schema: z.object({
+    name: z.string(),
   }),
 });
 
 export const collections = {
   'updates': updatesCollection,
   'authors': authorsCollection,
+  'categories': categoriesCollection,
+  'tags': tagsCollection,
 };
