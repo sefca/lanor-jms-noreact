@@ -17,14 +17,14 @@
             "links": [
                 { "label": "School Calendar", "href": "/calendar", "icon": "Calendar" },
                 { "label": "Upcoming Events", "href": "/events", "icon": "Calendar" },
-                { "label": "School Council", "href": "/sac", "icon": "Users" },
-                { "label": "Volunteers Needed", "href": "/volunteer", "icon": "Heart" }
+                { "label": "School Council", "href": "/sac/about", "icon": "Users" },
+                { "label": "Volunteers Needed", "href": "/school/volunteer", "icon": "Heart" }
             ]
         },
         {
             "title": "Resources",
             "links": [
-                { "label": "Nutrition Programs", "href": "/school/programs/nutrition", "icon": "Apple" },
+                { "label": "Nutrition Programs", "href": "/school/nutrition", "icon": "Apple" },
                 { "label": "Council Meetings", "href": "/sac/meetings", "icon": "Users" },
                 { "label": "Lanor Movie Night", "href": "/events", "icon": "Calendar" }
             ]
