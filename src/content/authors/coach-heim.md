@@ -1,5 +1,5 @@
 ---
-name: Coach Heim
+name: Mr. Heim
 role: Athletics Coordinator
 bio: Leading our school's sports teams and promoting physical education and
   teamwork.
