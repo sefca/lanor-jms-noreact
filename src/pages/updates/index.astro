@@ -4,9 +4,16 @@ import { getCollection, getEntries } from 'astro:content';
 
 const posts = await getCollection('updates');
 const authors = await getCollection('authors');
+const categories = await getCollection('categories');
+const tags = await getCollection('tags');
+
+// console.log(categories)
+// console.log(authors)
 
 // Map authors
-const authorMap = Object.fromEntries(authors.map(author => [author.filePath, author.data]));
+const authorMap = Object.fromEntries(authors.map(author => [author.id+".md", author.data]));
+const categoryMap = Object.fromEntries(categories.map(category => [category.id+".md", category.data]));
+const tagMap = Object.fromEntries(tags.map(tag => [tag.id+".md", tag.data]));
 
 // Sort posts by date descending
 const sortedPosts = posts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
@@ -24,7 +31,7 @@ const formatDate = (date: Date) => {
 };
 
 // Get unique categories
-const categories = [...new Set(sortedPosts.map(post => post.data.category).filter(Boolean))];
+const postCategories = [...new Set(sortedPosts.map(post => post.data.category).filter(Boolean))];
 ---
 
 <PageLayout title="School Updates" hideHeader={true}>
@@ -70,7 +77,7 @@ const categories = [...new Set(sortedPosts.map(post => post.data.category).filte
             {featuredPost.data.category && (
               <div class="absolute top-8 left-8">
                 <span class="px-6 py-2 bg-lanor-green text-white text-xs font-black uppercase tracking-widest rounded-full shadow-lg">
-                  {featuredPost.data.category}
+                  {categoryMap[featuredPost.data.category.id].name}
                 </span>
               </div>
             )}
@@ -117,9 +124,9 @@ const categories = [...new Set(sortedPosts.map(post => post.data.category).filte
       <button class="px-6 py-2 bg-lanor-green text-white rounded-full text-xs font-bold uppercase tracking-widest shadow-md">
         All Updates
       </button>
-      {categories.map(category => (
+      {postCategories.map(category => (
         <button class="px-6 py-2 bg-white border border-zinc-100 text-zinc-400 rounded-full text-xs font-bold uppercase tracking-widest hover:border-lanor-green/30 hover:text-lanor-green transition-all">
-          {category}
+          {categoryMap[category.id]?.name}
         </button>
       ))}
     </div>
@@ -138,7 +145,7 @@ const categories = [...new Set(sortedPosts.map(post => post.data.category).filte
             {post.data.category && (
               <div class="absolute top-6 left-6">
                 <span class="px-4 py-1.5 bg-white/90 backdrop-blur-md text-lanor-green text-[10px] font-black uppercase tracking-widest rounded-full shadow-sm">
-                  {post.data.category}
+                  {categoryMap[post.data.category.id]?.name}
                 </span>
               </div>
             )}

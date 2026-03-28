@@ -3,8 +3,8 @@ title: Welcome to our new website!
 date: 2026-03-23
 description: We are excited to launch our new website for Lanor Junior Middle
   School. Stay tuned for more updates.
-author: src/content/authors/lanor-jms.md
-category: school-news
+author: lanor-jms.md
+category: school-news.md
 ---
 # Welcome to our new website!
 

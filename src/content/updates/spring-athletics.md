@@ -3,10 +3,10 @@ title: Spring Athletics Season Begins
 date: 2026-03-25
 description: Tryouts for soccer, track and field, and ultimate frisbee are
   starting next week. Get your permission forms ready!
-author: src/content/authors/coach-miller.md
-category: athletics
+author: coach-miller.md
+category: athletics.md
 tags:
-  - athletics
+  - athletics.md
 image: https://picsum.photos/seed/soccer/1200/800
 ---
 # Spring Sports are Here!

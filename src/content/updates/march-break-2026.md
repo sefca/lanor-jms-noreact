@@ -2,8 +2,8 @@
 title: "Upcoming March Break"
 date: 2026-03-10
 description: "Important information about the upcoming March Break for all students and staff."
-author: src/content/authors/principal-mah.md
-category: "Calendar"
+author: principal-mah.md
+category: calendar.md
 ---
 
 # March Break 2026
