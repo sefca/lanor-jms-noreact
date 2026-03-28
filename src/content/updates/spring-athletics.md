@@ -18,7 +18,7 @@ We are excited to announce the start of our spring athletics season at Lanor JMS
 - **Coed Volleyball**: Jr (Gr 5/6) & Sr (Gr 7/8) teams.
 - **Upcoming sports**:
   - **Ultimate Frisbee**: Starting mid April. Jr (Gr 4-6) & Sr (Gr 7/8) teams.
-  - **Slo-Pitch**: 4 teams. Girls & Boys'. Jr (Gr 4-6) & Sr (Gr 7/8)
+  - **Slo-Pitch**: 4 teams. Girls' & Boys', Jr (Gr 4-6) & Sr (Gr 7/8)
   - **Track & Field**: Gr 4-8
 
 ## Requirements:
