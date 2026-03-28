@@ -45,7 +45,7 @@ content:
     path: src/content/authors
     filename:
       template: "{primary}.md"
-      field: create
+      # field: create
     fields:
       - name: name
         type: string
@@ -67,7 +67,7 @@ content:
     path: src/content/categories
     filename:
       template: "{primary}.md"
-      field: create
+      # field: create
     view:
       fields: [name]
     fields:
@@ -82,7 +82,7 @@ content:
     path: src/content/tags
     filename:
       template: "{primary}.md"
-      field: create
+      # field: create
     view:
       fields: [name]
     fields:
