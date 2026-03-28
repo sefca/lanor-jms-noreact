@@ -24,14 +24,16 @@ content:
         type: reference
         options:
           collection: categories
+          value: "{name}"
           # value: "{fields.file-name}"
-          # label: "{fields.name}"
+          label: "{fields.name}"
       - name: tags
         type: reference
         options:
           collection: tags
-          value: "{fields.file-name}"
-          label: "{fields.file-name}"
+          value: "{name}"
+          # value: "{fields.file-name}"
+          label: "{fields.name}"
           multiple: true
       - name: image
         type: string
@@ -42,7 +44,8 @@ content:
     type: collection
     path: src/content/authors
     filename:
-      template: "{fields.file-name}.md"
+      template: "{primary}.md"
+      field: create
     fields:
       - name: name
         type: string
@@ -55,37 +58,39 @@ content:
       - name: link
         type: string
         pattern: ^((https?:\/\/)?(www\.)?[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(\/[^\s]*)?)?$
-      - name: file-name
-        type: string
-        required: true
+      # - name: file-name
+      #   type: string
+      #   required: true
   - name: categories
     label: Categories
     type: collection
     path: src/content/categories
     filename:
-      template: "{fields.file-name}.md"
+      template: "{primary}.md"
+      field: create
     view:
       fields: [name]
     fields:
       - name: name
         type: string
-      - name: file-name
-        type: string
-        required: true
+      # - name: file-name
+      #   type: string
+      #   required: true
   - name: tags
     label: Tags
     type: collection
     path: src/content/tags
     filename:
-      template: "{fields.file-name}.md"
+      template: "{primary}.md"
+      field: create
     view:
       fields: [name]
     fields:
       - name: name
         type: string
-      - name: file-name
-        type: string
-        required: true
+      # - name: file-name
+      #   type: string
+      #   required: true
   - name: global
     label: Global
     type: group
